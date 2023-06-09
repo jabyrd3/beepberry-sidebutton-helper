@@ -1,5 +1,5 @@
 # Beepberry keyboard helper script
-
+![looks like this](https://github.com/jabyrd3/beepberry-sidebutton-helper/blob/main/keymap.png?raw=true)
 ## Overview
 Beepberry is very nice! The blackberry keyboard is a delight. As a TUI oriented device, though, there are lots of characters that someone will need to type and they aren't printed on the keyboard (these are mostly accessible using the right SYM key as a modifier). This script clumsily hijacks the programmable button on the right-side of the device to overlay an ascii keymap on top of any active tmux sessions to help you find the right key for ampersand or tilde or whatever.
 
