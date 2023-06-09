@@ -20,7 +20,7 @@ a: yes and yes. works great for me. ymmv.
 
 q: its not working for me, how can i fix it?
 
-a: first, this will only ever work if you are in a tmux session. if you are and its still not working: start by running (in a bash shell) `ps aux | grep gpio`. you should see at least 2 procs running, pigpiod and gpio-watch. you can also look at `systemctl status sym-keymap.service` to see if something is breaking with the gpio-watch binary, or the 17 script it calls. I'll try to keep up with feedback / issues but you'll probably have better luck taking questions to the discord.
+a: first, this will only ever work if you are in a tmux session. if you are and its still not working: start by running (in a sudo shell) `ps aux | grep gpio`. you should see at least 2 procs running, pigpiod and gpio-watch. you can also look at `systemctl status sym-keymap.service` to see if something is breaking with the gpio-watch binary, or the 17 script it calls. I'll try to keep up with feedback / issues but you'll probably have better luck taking questions to the discord.
 
 q: some of the keys on here are inaccurate
 
