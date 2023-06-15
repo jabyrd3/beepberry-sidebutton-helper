@@ -1,7 +1,7 @@
 # Beepberry keyboard helper script
 ![looks like this](https://github.com/jabyrd3/beepberry-sidebutton-helper/blob/main/keymap.png?raw=true)
 ## Overview
-Beepberry is very nice! The blackberry keyboard is a delight. As a TUI oriented device, though, there are lots of characters that someone will need to type and they aren't printed on the keyboard (these are mostly accessible using the right SYM key as a modifier). This script clumsily hijacks the programmable button on the right-side of the device to overlay an ascii keymap on top of any active tmux sessions to help you find the right key for ampersand or tilde or whatever.
+Beepberry is very nice! The blackberry keyboard is a delight. As a TUI oriented device, though, there are lots of characters that someone will need to type and they aren't printed on the keyboard (these are mostly accessible using the right SYM key as a modifier). This script clumsily hijacks the programmable button on the right-side of the device to overlay an ascii keymap on top of any active tmux sessions to help you find the right key for ampersand or tilde or whatever. update: double click the side button to see gomuks help
 
 ## Install
 Copy-paste instructions forthcoming but you just gotta run the install-sym-keymap.sh as sudo. This installs pigpiod, compiles and installs gpio-watch, and adds 3 systemctl services to ensure that this configuration can survive reboot. It also places a script at /etc/gpio-scripts/17. This is fired every time gpio-watch detects a switch-like state change on pin 17 (its debounced to make it less finnicky).
@@ -12,7 +12,7 @@ Run the uninstall script in this repo as sudo, that should clean everything up. 
 ## FAQS
 q: is this good? did you do this well?
 
-a: nope, read the script, this is very-much brute force. Someone should write a better version of this
+a: not originally, but then a8ksh4 from the discord gave me a handy bit of python and its lighter now :D.
 
 q: does this work? are you using it?
 
@@ -20,7 +20,7 @@ a: yes and yes. works great for me. ymmv.
 
 q: its not working for me, how can i fix it?
 
-a: first, this will only ever work if you are in a tmux session. if you are and its still not working: start by running (in a sudo shell) `ps aux | grep gpio`. you should see at least 2 procs running, pigpiod and gpio-watch. you can also look at `systemctl status sym-keymap.service` to see if something is breaking with the gpio-watch binary, or the 17 script it calls. I'll try to keep up with feedback / issues but you'll probably have better luck taking questions to the discord.
+a: first, this will only ever work if you are in a tmux session. if you are and its still not working: look at `systemctl status sym-keymap.service` to see if something is breaking with the python script, or the 17 script it calls. I'll try to keep up with feedback / issues but you'll probably have better luck taking questions to the discord.
 
 q: some of the keys on here are inaccurate
 
