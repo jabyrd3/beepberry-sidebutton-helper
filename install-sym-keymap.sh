@@ -193,4 +193,4 @@ EOF
 
 systemctl enable --now sym-keymap.service
 
-echo "!! it worked. you should be able to press the button on the side and see a map of the hidden sym keyboard layer. this configuration should survive a restart. if it doesn't work, or stops working, you should try to bug @salsadrinker on the discord, but i'm not making any promises about support. have fun, i hope this works for you!"
+echo "!! it worked. you should be able to press the button on the side and see a map of the hidden sym keyboard layer. this configuration should survive a restart."

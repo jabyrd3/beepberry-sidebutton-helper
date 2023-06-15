@@ -1,10 +1,15 @@
 # Beepberry keyboard helper script
 ![looks like this](https://github.com/jabyrd3/beepberry-sidebutton-helper/blob/main/keymap.png?raw=true)
 ## Overview
-Beepberry is very nice! The blackberry keyboard is a delight. As a TUI oriented device, though, there are lots of characters that someone will need to type and they aren't printed on the keyboard (these are mostly accessible using the right SYM key as a modifier). This script clumsily hijacks the programmable button on the right-side of the device to overlay an ascii keymap on top of any active tmux sessions to help you find the right key for ampersand or tilde or whatever. update: double click the side button to see gomuks help
+Beepberry is very nice! The blackberry keyboard is a delight. As a TUI oriented device, though, there are lots of characters that someone will need to type and they aren't printed on the keyboard (these are mostly accessible using the right SYM key as a modifier). This script listens on pin 17 for presses of the programmable button on the right-side of the device to overlay an ascii keymap on top of any active tmux sessions to help you find the right key for ampersand or tilde or whatever. update: double click the side button to see some gomuks help
 
 ## Install
-Copy-paste instructions forthcoming but you just gotta run the install-sym-keymap.sh as sudo. This installs pigpiod, compiles and installs gpio-watch, and adds 3 systemctl services to ensure that this configuration can survive reboot. It also places a script at /etc/gpio-scripts/17. This is fired every time gpio-watch detects a switch-like state change on pin 17 (its debounced to make it less finnicky).
+if you're feeling dangerous:
+
+```
+curl -s https://raw.githubusercontent.com/jabyrd3/beepberry-sidebutton-helper/main/install-sym-keymap.sh | sudo bash
+```
+Otherwise, run the install-sym-keymap.sh as sudo after you've read it :P. 
 
 ## Uninstall
 Run the uninstall script in this repo as sudo, that should clean everything up. NOTE: if anything else you've built/installed relies on gpio-watch or pigpiod this will break them. User beware. Read the script to understand what it is doing before running it, if you've done anything with GPIO that isn't stock/standard.
